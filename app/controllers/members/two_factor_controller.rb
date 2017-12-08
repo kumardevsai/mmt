@@ -21,7 +21,7 @@ module Members
       if result.success?
         redirect_to edit_member_settings_two_factor_path, notice: result.message
       else
-        redirect_back fallback_location: member_settings_two_factor_path, error: result.message
+        redirect_back fallback_location: member_settings_two_factor_path, alert: result.message
       end
     end
 
@@ -34,7 +34,7 @@ module Members
       if result.success?
         redirect_to member_settings_two_factor_path, notice: result.message
       else
-        redirect_to new_member_settings_two_factor_path, error: result.message
+        redirect_to new_member_settings_two_factor_path, alert: result.message
       end
     end
 
